@@ -1,0 +1,58 @@
+
+.package-img{
+    max-width: 100%;
+    
+    height: auto;
+}
+#package{
+    
+        margin-top: 80px;
+        
+        width: 800px;
+    
+}
+.package-p{
+    font-size: 12px;
+    
+    text-align: justify;
+}
+.package{
+    margin-top: 80px;
+    
+    width: 800px;
+}
+.vertical-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the form horizontally */
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+    margin-left: 10px;
+   
+    /* Adjust the spacing between form elements */
+  }
+  .form-div{
+    background-color: salmon;
+   
+  }
+  
+  /* Additional styling for labels, inputs, and buttons can be added here */
+  
+@media screen and (min-width: 481px) and (max-width: 640px) {
+	
+   .package{
+    width: 400px;
+   }
+}
+
+/* Media Query for Large Screens */
+@media screen and (min-width: 641px) and (max-width: 764px) {
+	
+    .package{
+        width: 600px;
+       }
+   
+}

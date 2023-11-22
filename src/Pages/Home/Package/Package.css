@@ -1,0 +1,27 @@
+#my-paragraph{
+    display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.search{
+  height: 48px;
+  width: 250px;
+
+}
+#search{
+  height: 48px;
+  width: 250px;
+
+}
+/* Package.css */
+.search-field-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* You can also use text-align: center; if you prefer */
+}
+/* .search-field{
+  display: flex;
+  align-items: center;
+} */

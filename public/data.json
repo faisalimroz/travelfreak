@@ -1,0 +1,52 @@
+[
+    {
+      "from": "New York",
+      "to": "Los Angeles",
+      "date": "2023-11-01",
+      "transport": "plane",
+      "time": "8:00AM-10:00PM"
+    },
+    {
+      "from": "London",
+      "to": "Paris",
+      "date": "2023-11-01",
+      "transport": "train",
+       "time": "8:00AM-10:00PM",
+       "price": "50"
+
+    },
+    {
+      "from": "London",
+      "to": "Paris",
+      "date": "2023-11-01",
+      "transport": "train",
+       "time": "9:00AM-11:00PM",
+       "price": "50"
+    },
+    {
+      "from": "Tokyo",
+      "to": "Sydney",
+      "date": "2023-11-01",
+      "transport": "plane",
+      "time": "7:00AM-9:00PM",
+      "price": "400"
+    },
+    {
+      "from": "San Francisco",
+      "to": "Seattle",
+      "date": "2023-11-28",
+      "transport": "bus",
+      "time": "8:00AM-11:00PM",
+      "price": "100"
+    },
+    {
+      "from": "Dubai",
+      "to": "Mumbai",
+      "date": "2023-12-05",
+      "transport": "plane",
+      "time": "7:00AM-10:00PM",
+      "price": "300"
+
+    }
+  ]
+  

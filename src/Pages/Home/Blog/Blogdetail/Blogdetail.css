@@ -1,0 +1,13 @@
+.blog-title:hover{
+    text-decoration: underline;
+}
+#blog-card{
+    border-radius: 10px;
+}
+#my-paragraph{
+    text-align: justify;
+}
+#blog-img{
+    width: 384px;
+    height: 256px;
+}

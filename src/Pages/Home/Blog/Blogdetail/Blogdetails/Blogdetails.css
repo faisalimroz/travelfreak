@@ -1,0 +1,30 @@
+
+#blog-img{
+    width: 384px;
+    height: 256px;
+}
+.blog-p{
+    font-size: 12px;
+    
+    text-align: justify;
+}
+.blog{
+    margin-top: 80px;
+    
+    width: 800px;
+}
+/* @media screen and (min-width: 481px) and (max-width: 640px) {
+	
+   .blog{
+    width: 400px;
+   }
+} */
+
+/* Media Query for Large Screens */
+/* @media screen and (min-width: 641px) and (max-width: 764px) {
+	
+    .blog{
+        width: 600px;
+       }
+   
+} */

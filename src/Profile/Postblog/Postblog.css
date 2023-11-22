@@ -1,0 +1,88 @@
+/* Postblog.css */
+.postblog-container {
+    padding: 20px;
+}
+
+.postblog {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 8px; /* Add margin to separate inputs */
+}
+
+
+input[type="file"] {
+    margin-top: 8px;
+}
+
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+label[for="file-input"] {
+    cursor: pointer;
+    display: block;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #4caf50;
+    color: white;
+}
+
+label[for="file-input"]:hover {
+    background-color: #45a049;
+}
+
+.preview-image {
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd; /* Add border style */
+}
+
+/* Ensure the image doesn't exceed its container */
+.preview-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
