@@ -44,7 +44,7 @@ const Blog = () => {
             setBlog(data)
 
         }
-        fetchData()
+        fetchData();
     }, [currentPage, itemsPerPage, search])
     return (
         <>

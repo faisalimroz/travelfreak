@@ -40,4 +40,10 @@
     border: 1px solid #ccc;
     border-radius: 4px;
   }
-  
+  #search-btn{
+    height: 10px;
+    width: 50px;
+    margin-top:50px;
+    padding: 20px 60px ;
+    text-align: center;
+  }
