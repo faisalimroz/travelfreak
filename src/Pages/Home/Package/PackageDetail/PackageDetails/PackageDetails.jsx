@@ -35,10 +35,10 @@ const PackageDetails = () => {
     // Calculate the total price based on the number of members and price per member
     const totalPrice = members * packagePost.price;
 
-
+    const id=pid;
   
     // Redirect to the Payment component with the totalPrice as a URL parameter
-    navigate(`/payment?totalPrice=${totalPrice}`);
+    navigate(`/payment?totalPrice=${totalPrice}&id=${id}`);
     // You can handle form submission here
     console.log('Date:', date);
     console.log('Members:', members);
@@ -70,9 +70,9 @@ const PackageDetails = () => {
               <img className='blog-img' src={packagePost.img} alt="Shoes" />
             </figure>
             <h2 className="blog-title font-bold">{packagePost.title}</h2>
-            <p className='blog-p'>{packagePost.description}</p>
+            <p className=' text-sm'>{packagePost.description}</p>
           </div>
-          <div className='form-div'>
+          <div className='form-div bg-green-200'>
             <form onSubmit={handleSubmit} className="vertical-form">
               <div className="form-group mt-5 ">
                 <label>Date:</label>
@@ -89,7 +89,7 @@ const PackageDetails = () => {
 
               </div>
               <div className="form-group">
-                <button className='bg-green-200 p-2 ' type="submit">Pay</button>
+                <button className='bg-blue-400 p-2 ' type="submit">Pay</button>
               </div>
             </form>
           </div>

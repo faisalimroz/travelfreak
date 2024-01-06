@@ -16,6 +16,10 @@ import Profile from '../Layout/Profile'
 import Mycart from "../Profile/Mycart/Mycart";
 import Result from "../Pages/Home/SearchForm/Result/Result";
 import Postblog from "../Profile/Postblog/Postblog";
+import Allusers from "../Profile/Allusers/Allusers";
+import Order from "../Profile/Orders/Orders";
+import Orders from "../Profile/Orders/Orders";
+import Adminhome from "../Profile/Adminhome/Adminhome";
 
   export const router = createBrowserRouter([
     {
@@ -82,12 +86,20 @@ import Postblog from "../Profile/Postblog/Postblog";
       element:<Profile></Profile> ,
       children: [
         {
-          path: 'mycart', // Remove the leading slash
-          element: <Mycart></Mycart>
+          path: 'orderhistory', // Remove the leading slash
+          element:<Orders></Orders>
         },
         {
           path: 'postblog', // Remove the leading slash
           element: <Postblog></Postblog>
+        },
+        {
+          path: 'adminhome', // Remove the leading slash
+          element: <Adminhome></Adminhome>
+        },
+        {
+          path: 'allusers', // Remove the leading slash
+          element:<Allusers></Allusers>
         }
       ]
     }

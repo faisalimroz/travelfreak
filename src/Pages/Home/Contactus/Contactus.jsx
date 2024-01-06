@@ -16,7 +16,7 @@ const Contactus = () => {
                 </div>
                 <div className='info'>
                
-                  <div className='mail'>
+                  <div  className='mail '>
                     <h1 className='font-black'>Location</h1>
                     <p>travelbug@gmail.com</p>
                     <p>+8801864562819</p>

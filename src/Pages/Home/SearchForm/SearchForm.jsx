@@ -119,8 +119,8 @@ const SearchForm = () => {
                         <option value="bus">Bus</option>
                     </select>
                 </div>
-                <button id='search-btn' className=" bg-green-200" type="submit">
-                    Search
+                <button id='search-btn' className=" bg-green-500" type="submit">
+                   <h2 id='h2'> Search</h2>
                 </button>
             </form>
         </div>

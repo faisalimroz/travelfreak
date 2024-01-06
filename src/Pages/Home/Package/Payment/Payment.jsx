@@ -10,14 +10,14 @@ const Payment = () => {
     
     const location = useLocation();
     const totalPrice = new URLSearchParams(location.search).get('totalPrice');
-
+    const id = new URLSearchParams(location.search).get('id');
     return (
         <div>
 
-            <h1>Payment</h1>
-            <p>Total Price: ${totalPrice}</p>
+            <h1 className='ml-[380px]'>Payment</h1>
+            <p className='ml-[380px]'>Total Price: ${totalPrice}</p>
                 <Elements stripe={stripePromise }>
-                       <Checkoutform totalPrice={totalPrice} ></Checkoutform>
+                       <Checkoutform totalPrice={totalPrice} id={id} ></Checkoutform>
                 </Elements>
 
 

@@ -8,10 +8,10 @@ import { AuthContext } from '../../../../contexts/AuthProvider';
 
 
 
-const Checkoutform = ({ totalPrice}) => {
+const Checkoutform = ({ totalPrice, id}) => {
     const { user } = useContext(AuthContext)
     const name=user.email;
-    console.log(totalPrice)
+    console.log(totalPrice,name,'ddsdfdcd')
     const [clientSecret, setClientSecret] = useState('')
     const stripe = useStripe();
     const [processing,setProcessing]=useState(false)
@@ -27,7 +27,7 @@ const Checkoutform = ({ totalPrice}) => {
         // const stripeApiKey = 'sk_test_51NtCtrF2ejzpUbVI0D61WSBe8TSrr08Hvibewlcu8LLfAHrmOjV8aXmPT2FXbfhMMgSzO4y2wV461Nk1A25EJ12T000CuL1UR1';
       
         // Include the Bearer token in the request headers
-        axiosSecure.post('/create-payment-intent', { totalPrice,name }, {
+        axiosSecure.post('/create-payment-intent', { totalPrice,name, id }, {
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ const Checkoutform = ({ totalPrice}) => {
           console.log(res.data.clientSecret);
           setClientSecret(res.data.clientSecret);
         })
-      }, [totalPrice,name]);// Empty dependency array means this effect runs once when the component mounts
+      }, [totalPrice,name, id]);// Empty dependency array means this effect runs once when the component mounts
 
     const handleSubmit = async (event) => {
         // Block native form submission.
@@ -90,7 +90,9 @@ const Checkoutform = ({ totalPrice}) => {
              
               transactionId:transactionId,
               date: new Date(),
-              orderStatus: 'service pending'
+              orderStatus: 'service pending',
+              user:name,
+              id:id,
             
             }
             axiosSecure.post('/payments',payment)
@@ -128,7 +130,7 @@ const Checkoutform = ({ totalPrice}) => {
                 </button>
             </form>
             {cardError && <p className='text-red-400'>{cardError}</p>}
-            {transactionId && <p className='text-green-400'>Transaction complete with transactionId:{transactionId}</p>}
+            {transactionId && <p className='text-green-400 text-center'>Transaction complete with transactionId:{transactionId}.Thank you for Choosing Us</p>}
         </>
     );
 };

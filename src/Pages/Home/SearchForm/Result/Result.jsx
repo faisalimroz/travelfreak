@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './Result.css';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../../contexts/AuthProvider';
 
 const Result = () => {
   const location = useLocation();
@@ -8,6 +9,9 @@ const Result = () => {
   const [filterPrice, setFilterPrice] = useState(false);
   const [pricePerMember, setPricePerMember] = useState(0);
   const [members, setMembers] = useState(1);
+  const {user}=useContext(AuthContext)
+  const name=user.email;
+  console.log('payment',name)
   const navigate = useNavigate();
 
   const handleAddMember = () => {
@@ -37,7 +41,8 @@ const Result = () => {
           className='h-[10px] mt-5 ml-[700px]'
           onChange={(e) => setFilterPrice(e.target.checked)}
         />
-        <label value="200" className='' htmlFor="filterPrice">$200</label>
+        <label value="400" className='' htmlFor="filterPrice"> ৳400</label>
+      
       </div>
 
       {searchData && searchData.length > 0 ? (
@@ -50,7 +55,7 @@ const Result = () => {
                 <h3>To: {result.to}</h3>
                 <h3>Date: {result.date}</h3>
                 <h3>Route:{result.from}-{result.to}</h3>
-                <p>Transport: {result.transport}</p>
+                <h3>Transport: {result.transport}</h3>
               </div>
               <div className="ml-4">
                 <h3>Time: {result.time}</h3>
@@ -58,25 +63,25 @@ const Result = () => {
               <div className="ml-4">
                 <h3>Seat available 36</h3>
               </div>
-              <div className="ml-4">
+              {/* <div className="ml-4">
                 <h3>Price: ${result.price}</h3>
                 <button className="p-2 bg-green-200">Buy Ticket</button>
-              </div>
-              <div className="form-group">
+              </div> */}
+              <div className="ml-4 ">
                 <h3>Number of Members:</h3>
-                <button type="button" className='bg-blue-300' onClick={handleRemoveMember}>-</button>
+                <button type="button" className='bg-blue-300 mr-1' onClick={handleRemoveMember}>-</button>
                 {members}
-                <button className='bg-blue-300' type="button" onClick={handleAddMember}>+</button>
+                <button className='bg-blue-300 ml-1' type="button" onClick={handleAddMember}>+</button>
               </div>
-              <div className="form-group">
+              {/* <div className="form-group">
                 <p className='text-1xl'>Price per Member: ${members * result.price}</p>
+              </div> */}
+              <div className="ml-4">
+                <h3 className='text-1xl'>Total Price: ${members * result.price}</h3>
               </div>
-              <div className="form-group">
-                <p className='text-1xl'>Total Price: ${members * result.price}</p>
-              </div>
-              <div className="form-group">
+              <div className="ml-4">
                 <button
-                  className='bg-green-200 p-2 '
+                  className='bg-green-400 p-2 '
                   type="submit"
                   onClick={() => handlePay(members * result.price)}
                 >

@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
     height: 200px;
-    width: 1170px;
+    width: 1210px;
   }
   form{
     display: flex;
@@ -41,9 +41,10 @@
     border-radius: 4px;
   }
   #search-btn{
-    height: 10px;
-    width: 50px;
-    margin-top:50px;
-    padding: 20px 60px ;
-    text-align: center;
+ 
+
+    padding: 0px 3px ;
+    
+  
   }
+ 

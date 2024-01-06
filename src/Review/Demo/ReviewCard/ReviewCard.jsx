@@ -2,7 +2,7 @@
 import { FaStar } from 'react-icons/fa';
 import './ReviewCard.css';
 const ReviewCard = ({ review }) => {
-  const { rating, reviewMessage, userr } = review;
+  const { rating, reviewMessage, userr, photo} = review;
 
   return (
     // <div className="review-card">
@@ -21,7 +21,7 @@ const ReviewCard = ({ review }) => {
 
     <div className="review">
       <div className="head-review">
-        <img className='review-img' src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt='' width="250px" />
+        <img className='review-img' src={photo} alt='' width="250px" />
       </div>
       <div className="body-review">
         <div className="name-review">{userr}</div>
@@ -43,4 +43,4 @@ const ReviewCard = ({ review }) => {
   );
 };
 
-export default ReviewCard;
+export default ReviewCard;    

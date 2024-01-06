@@ -53,7 +53,7 @@ const Blogdetails = () => {
               <img id='blog-img' className='blog-img' src={blogPost.img} alt="Shoes" />
             </figure>
             <h2 className="blog-title font-bold">{blogPost.title}</h2>
-            <p className='blog-p'>{blogPost.description}</p>
+            <p className=''>{blogPost.description}</p>
            
           </div>
           <div>

@@ -1,10 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './Postblog.css'; // Import the CSS file
 import axios from 'axios';
-
-
-
 import { AuthContext } from '../../contexts/AuthProvider';
+
 
 const img_hosting_token = '6fb68cbd4232c1e20fa193c68ca16ae7';
 
@@ -14,12 +12,11 @@ const Postblog = () => {
     const { user } = useContext(AuthContext);
     const [description, setDescription] = useState('');
     const [date, setDate] = useState('');
-    const [img, setImage] = useState(null); // Initialize with null
-    // const [postPublished, setPostPublished] = useState(false);
-    // const [toastMessage, setToastMessage] = useState('');
+    const [img, setImage] = useState(null);
+    const [postPublished, setPostPublished] = useState(false);
+    const [toastMessage, setToastMessage] = useState('');
 
     useEffect(() => {
-        // Set the current date when the component mounts
         const currentDate = new Date().toISOString().slice(0, 10);
         setDate(currentDate);
     }, []);
@@ -32,11 +29,9 @@ const Postblog = () => {
     };
 
     const handleCrossButtonClick = () => {
-        // Clear the input type file element
         const fileInput = document.querySelector('#file-input');
         fileInput.value = '';
 
-        // Hide the preview image
         const previewImage = document.querySelector('.preview-image');
         previewImage.style.display = 'none';
     };
@@ -45,10 +40,9 @@ const Postblog = () => {
         e.preventDefault();
 
         const formData = new FormData();
-        formData.append('image', img); // Append the file object
+        formData.append('image', img);
 
         try {
-            // Upload the image to imgBB
             const imgUploadResponse = await fetch(img_hosting_url, {
                 method: 'POST',
                 body: formData,
@@ -58,7 +52,6 @@ const Postblog = () => {
             if (imgResponseData.data) {
                 const email = user.email;
 
-                // Make an axios POST request with the image URL
                 const response = await axios.post('http://localhost:5000/blog', {
                     title,
                     description,
@@ -67,11 +60,9 @@ const Postblog = () => {
                     email,
                 });
 
-                // Show a toast notification when the post is published
-                // setToastMessage('Post Published');
-                // setPostPublished(true);
+                setToastMessage('Post Published');
+                setPostPublished(true);
 
-                // Reset the form fields
                 setTitle('');
                 setDescription('');
                 setImage(null);
@@ -84,38 +75,33 @@ const Postblog = () => {
     };
 
     return (
-        <div className="postblog-container">
-            <div className='bg-gray-200 postblog'>
-                <h1>Add a Blog Post</h1>
+        <div className="postblog-container h-2">
+            <div style={{ backgroundColor: '#e0e0e0', padding: '20px', borderRadius: '10px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }} className='postblog-box'>
+                <h1 style={{ color: 'blue' }}>Add a Blog Post</h1>
                 <form onSubmit={handleSubmit}>
-                    <div className='form-group '>
-                        <label className=''>Title:</label>
+                    <div style={{ marginBottom: '10px' }} className='form-group'>
+                        <label>Title:</label>
                         <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
                     </div>
-                    
-                    <div className='form-group '>
-                        <label className=''>Description:</label>
-                        <textarea className='' value={description} onChange={(e) => setDescription(e.target.value)} />
+                    <div style={{ marginBottom: '10px' }} className='form-group'>
+                        <label>Description:</label>
+                        <textarea style={{ width: '100%', minHeight: '100px' }} value={description} onChange={(e) => setDescription(e.target.value)} />
                     </div>
-                    
-                    <div className='form-group'>
+                    <div style={{ marginBottom: '10px' }} className='form-group'>
                         <label>Image:</label>
                         <input type='file' accept='image/*' onChange={handleImageChange} id='file-input' />
 
                         {img && (
-                            <div className="preview-image">
-                                <img src={URL.createObjectURL(img)} alt='Blog Post' />
-                                <div className="cross-button" onClick={handleCrossButtonClick}>X</div>
+                            <div style={{ marginTop: '10px', position: 'relative' }} className="preview-image">
+                                <img style={{ maxWidth: '100%', height: 'auto' }} src={URL.createObjectURL(img)} alt='Blog Post' />
+                                <div style={{ position: 'absolute', top: '5px', right: '5px', cursor: 'pointer', backgroundColor: 'red', color: 'white', padding: '5px', borderRadius: '50%' }} onClick={handleCrossButtonClick}>X</div>
                             </div>
                         )}
                     </div>
                     <div className='form-group'>
-                        <button type='submit'>Submit</button>
+                        <button style={{ backgroundColor: 'green', color: 'white', padding: '10px', cursor: 'pointer' }} type='submit'>Submit</button>
                     </div>
                 </form>
-
-             
-
             </div>
         </div>
     );
